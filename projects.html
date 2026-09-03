@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Tung Nguyen</title>
+<meta name="description" content="Solar car array characterisation, campus
+  energy efficiency, cleanroom fixtures, and device laboratory coursework.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .lead{ max-width:var(--measure); margin:0 0 42px }
+  .lead figure{ margin-bottom:0 }
+</style>
+</head>
+<body>
+
+<header class="wrap masthead">
+  <a class="mark" href="index.html">Tung Nguyen</a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="tung_resume_website.pdf">Resume</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap pagehead">
+    <h1>Projects</h1>
+    <p>What happens to a device once it leaves the cleanroom and has to work
+      in a system, and how to most efficiently use the energy it
+      generates.</p>
+  </section>
+
+  <section class="wrap section">
+    <div class="lead">
+      <figure>
+        <img src="sscp_encapsulation.JPG"
+             alt="An encapsulated solar module on the bench">
+        <figcaption>An encapsulated module from the pilot. We are building a
+          new car &mdash; the first in over half a decade.</figcaption>
+      </figure>
+    </div>
+
+    <article class="entry">
+      <div class="where">
+        <b>Stanford Solar Car Project</b>
+        <span>Array &amp; Battery</span>
+        <span>Oct 2025 &ndash; present</span>
+      </div>
+      <div>
+        <h3>Getting every watt off the array</h3>
+        <p>The team was budgeting array power from cell datasheets, which
+          ignores everything that happens between a bare cell and an
+          encapsulated module on a moving vehicle.</p>
+        <ul>
+          <li>Characterise Maxeon Gen III cells by outdoor four-wire IV sweep
+            on a Keithley 2461, and analyse 3&times;6 modules for mismatch loss
+            to inform cell binning and array layout.</li>
+          <li>Lead infrared and electroluminescence inspection to find
+            hotspots, cracks and interconnect faults; piloted a new
+            encapsulation method for durability and water-ingress
+            resistance.</li>
+          <li>Build Python tools modelling bypass-diode configurations and
+            temperature-driven efficiency loss, to inform thermal and cooling
+            design for the next-generation array.</li>
+        </ul>
+
+        <div class="figrow three">
+          <figure>
+            <img src="sscp_EL.JPG" alt="Electroluminescence image of a module">
+            <figcaption>Electroluminescence.</figcaption>
+          </figure>
+          <figure>
+            <img src="sscp_heat_array.jpeg" alt="Infrared thermography of a module">
+            <figcaption>Infrared thermography.</figcaption>
+          </figure>
+          <figure>
+            <img src="sscp_battery.JPG" alt="Battery pack under test">
+            <figcaption>Pack assembly and test.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="where">
+        <b>Sustainable Stanford</b>
+        <span>Residential &amp; Dining Enterprises</span>
+        <span>Sep 2025 &ndash; present</span>
+      </div>
+      <div>
+        <h3>Saving energy in Stanford's residential buildings</h3>
+        <ul>
+          <li>Audited 320 common spaces across 45 buildings and roughly 2,900
+            lighting elements to map occupancy-sensor coverage. Only 36.9% of
+            spaces had them.</li>
+          <li>Built an ROI model from the audit data projecting 66,421 kWh and
+            $11,941 in annual savings against $65,650 upfront, a payback of
+            about 5.5 years.</li>
+          <li>Evaluated vendors and specified hardware for a window-sensor
+            HVAC pilot.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="where">
+        <b>Congreve Lab</b>
+        <span>Fusion 360, Onshape</span>
+      </div>
+      <div>
+        <h3>Cleanroom fixtures</h3>
+        <p>Sample geometry was quietly a variable in our deposition results. A
+          masking split during sputtering gave 8/8 working devices with a
+          modified mask against 4/8 without, which was enough to justify
+          designing proper fixtures. Substrate holders and evaporation masks are
+          in use; the latest sputter mask is designed but not yet fabricated
+          <span class="tag design">Not yet made</span>.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="where">
+        <b>MATSCI 164</b>
+        <span>Electronic and Photonic Materials and Devices Laboratory</span>
+      </div>
+      <div>
+        <h3>Organic transistors and OLEDs</h3>
+        <ul>
+          <li>Fabricated bottom-gate PDBT-co-TT organic thin-film transistors
+            with a PFBT self-assembled monolayer on the gold contacts, confirmed
+            by goniometry (36.7&deg; to 64.3&deg; contact angle). Extracted
+            threshold voltage and saturation mobility from transfer curves and
+            measured 13% higher mobility, consistent with reduced interfacial
+            trap density.</li>
+          <li>Built F8BT OLEDs with PEDOT:PSS and PFN-Br injection layers and a
+            100 nm aluminium cathode evaporated at SNF. Used matched
+            electroluminescence and photoluminescence peaks to attribute an
+            anomalously high turn-on voltage to spin-coating defects rather than
+            interlayer energetics.</li>
+        </ul>
+
+        <div class="figrow two">
+          <figure>
+            <img src="matsci164_otft.JPG"
+                 alt="Organic thin-film transistor on a test board">
+            <figcaption>OTFT measurement.</figcaption>
+          </figure>
+          <figure>
+            <img src="matsci164_oled.JPG" alt="Course devices on a tray">
+            <figcaption>Devices from the course lab.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="sechead">Previously</h2>
+
+    <article class="entry">
+      <div class="where">
+        <b>Wetland Ecosystems Group</b>
+        <span>Stanford</span>
+        <span>Jun 2025 &ndash; Jun 2026</span>
+      </div>
+      <div>
+        <h3>Remote sensing of wetland change</h3>
+        <p>Geospatial analysis in Google Earth Engine, ArcGIS and R, with
+          fieldwork in Louisiana and sample processing back on campus. Wrote the
+          sample-prep SOP for cryomilling and digestion, and was second author
+          on an AGU abstract. My first research position, and where I learned to
+          handle data before I learned to make devices.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="where">
+        <b>Stanford Energy Club</b>
+        <span>with Verne</span>
+      </div>
+      <div>
+        <h3>Composite pressure vessels for cryo-compressed hydrogen</h3>
+        <p>Project work on COPV design considerations for a hydrogen storage
+          startup.</p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Stanford, California</span>
+    <span><a href="mailto:tungdn@stanford.edu">tungdn@stanford.edu</a></span>
+  </div>
+</footer>
+
+<script>
+/* Show a labelled placeholder instead of a broken-image icon while an
+   image file is missing. Safe to delete once every photo is uploaded. */
+document.querySelectorAll('figure img').forEach(function(img){
+  img.addEventListener('error', function(){
+    var d = document.createElement('div');
+    d.className = 'imgfail';
+    d.textContent = img.getAttribute('src');
+    img.replaceWith(d);
+  });
+});
+</script>
+</body>
+</html>

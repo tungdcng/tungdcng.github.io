@@ -1,0 +1,8 @@
+# Local-only working notes. Not for the public repo.
+CLAUDE.md
+
+# macOS
+.DS_Store
+
+# Working notes, not for the public repo.
+*.md

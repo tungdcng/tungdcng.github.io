@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Tung Nguyen</title>
+<meta name="description" content="Semitransparent perovskite solar cells for
+  upconversion, and electro-thermal transport in scaled interconnects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .stackwrap{ display:grid; grid-template-columns:1fr 1fr; gap:34px;
+              margin:22px 0 6px; max-width:var(--measure) }
+  .stackcol h5{ font-size:13px; font-weight:600; color:var(--muted);
+                margin:0 0 8px }
+  .layers{ list-style:none; margin:0; padding:0; border:1px solid var(--rule);
+           background:var(--paper-2) }
+  .layers li{ display:grid; grid-template-columns:12px 1fr auto;
+              align-items:center; gap:10px; padding:0 10px 0 0;
+              border-bottom:1px solid var(--rule); font-size:13px }
+  .layers li:last-child{ border-bottom:0 }
+  .sw{ align-self:stretch }
+  .ln{ padding:7px 0 }
+  .lt{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums }
+  .layers li.tall .ln{ padding:16px 0 }
+  .figrow{ display:grid; grid-template-columns:1fr 1fr; gap:26px;
+           margin:22px 0 4px; max-width:var(--measure) }
+  @media (max-width:860px){
+    .stackwrap,.figrow{ grid-template-columns:1fr; gap:22px }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap masthead">
+  <a class="mark" href="index.html">Tung Nguyen</a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="research.html" aria-current="page">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="tung_resume_website.pdf">Resume</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap pagehead">
+    <h1>Research</h1>
+    <p>Two projects, both about energy at the scale of a single device: light a
+      solar cell cannot use, and heat a wire cannot avoid.</p>
+  </section>
+
+  <section class="wrap section">
+    <article class="entry" id="perovskite">
+      <div class="where">
+        <b>Congreve Lab</b>
+        <span>Stanford EE</span>
+        <span>Jun 2026 &ndash; present</span>
+        <span>EE REU, then continuing</span>
+      </div>
+      <div>
+        <h3>Semitransparent perovskite cells for upconversion</h3>
+
+        <p>A silicon or perovskite cell throws away every photon below its
+          bandgap. Triplet&ndash;triplet annihilation upconversion recovers some
+          of them by combining two low-energy photons into one the cell can
+          absorb &mdash; but the upconverter has to sit behind the cell, which
+          means the light has to get through the back contact first. A normal
+          device has a hundred nanometres of evaporated silver there.</p>
+
+        <p>So the back contact has to become transparent, and the only practical
+          way to do that is sputtering a conducting oxide. Sputtering is
+          violent: energetic species from the plasma reach the organic layers
+          underneath and damage them long before you have a usable film. That
+          conflict is the whole problem.</p>
+
+        <div class="stackwrap">
+          <div class="stackcol">
+            <h5>Opaque baseline &mdash; champion 18.9% PCE</h5>
+            <ul class="layers">
+              <li><span class="sw" style="background:var(--m-ag)"></span><span class="ln">Ag</span><span class="lt">100 nm</span></li>
+              <li><span class="sw" style="background:var(--m-bcp)"></span><span class="ln">BCP</span><span class="lt">6&ndash;15 nm</span></li>
+              <li><span class="sw" style="background:var(--m-c60)"></span><span class="ln">C<sub>60</sub></span><span class="lt">5&ndash;25 nm</span></li>
+              <li class="tall"><span class="sw" style="background:var(--m-pvk)"></span><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
+              <li><span class="sw" style="background:var(--m-sam)"></span><span class="ln">2PACz</span><span class="lt">monolayer</span></li>
+              <li><span class="sw" style="background:var(--m-ito)"></span><span class="ln">ITO</span><span class="lt">contact</span></li>
+              <li><span class="sw" style="background:var(--m-glass)"></span><span class="ln">Glass</span><span class="lt"></span></li>
+            </ul>
+          </div>
+          <div class="stackcol">
+            <h5>Semitransparent &mdash; best 13.9% PCE</h5>
+            <ul class="layers">
+              <li><span class="sw" style="background:var(--m-ag)"></span><span class="ln">Ag</span><span class="lt">edge contact</span></li>
+              <li><span class="sw" style="background:var(--m-izo)"></span><span class="ln">IZO</span><span class="lt">sputtered</span></li>
+              <li><span class="sw" style="background:var(--m-bcp)"></span><span class="ln">BCP</span><span class="lt">6&ndash;15 nm</span></li>
+              <li><span class="sw" style="background:var(--m-c60)"></span><span class="ln">C<sub>60</sub></span><span class="lt">5&ndash;25 nm</span></li>
+              <li class="tall"><span class="sw" style="background:var(--m-pvk)"></span><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
+              <li><span class="sw" style="background:var(--m-sam)"></span><span class="ln">2PACz</span><span class="lt">monolayer</span></li>
+              <li><span class="sw" style="background:var(--m-ito)"></span><span class="ln">ITO</span><span class="lt">contact</span></li>
+              <li><span class="sw" style="background:var(--m-glass)"></span><span class="ln">Glass</span><span class="lt"></span></li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:12.5px;color:var(--muted);max-width:52ch">
+          Silver stays in both. On the semitransparent devices it is patterned
+          at the edge as a contact rather than covering the active area.
+          Sb<sub>2</sub>O<sub>3</sub> and SnO<sub>2</sub> buffer routes between
+          C<sub>60</sub> and the oxide are still being explored.</p>
+
+        <h4>What I did</h4>
+        <p>Fabricated 120+ substrates end to end &mdash; glovebox spin coating
+          through thermal evaporation &mdash; then sputtered IZO and ITO top
+          contacts on the Lesker, with thickness on the Dektak and transmission
+          on the Cary 6000i.</p>
+
+        <h4>What came out of it</h4>
+        <ul>
+          <li>The group's first working semitransparent cells.</li>
+          <li>A two-step soft-sputter recipe &mdash; 37 W seed, then 100 W bulk,
+            deposited directly onto the BCP &mdash; that cut median series
+            resistance 4&times; and raised shunt resistance 2.7&times;, taking
+            the best device from 10.6% to 13.9% PCE at over 80% transmittance
+            beyond 750 nm.</li>
+          <li>A root-cause failure analysis of a batch that came out shorted.
+            Bare-glass witness samples through four-point probe, UV-Vis and
+            photoluminescence traced the yield limiter to evaporation-mask step
+            coverage; a masking split then gave 8/8 working devices against 4/8
+            without.</li>
+          <li>A full-factorial DOE crossing C<sub>60</sub> (5&ndash;25 nm) and
+            Sb<sub>2</sub>O<sub>3</sub> (5&ndash;15 nm) thickness. Best stack in
+            the tested range was 25/5 nm &mdash; at a corner of the design
+            space, so the true optimum may sit outside it &mdash; with remaining
+            losses attributed to series resistance.</li>
+        </ul>
+
+        <figure>
+          <img src="device_after_sputter.JPG"
+               alt="A batch of substrates in the holder after sputtering">
+          <figcaption>A batch straight out of the sputterer, still in the
+            holder. The purple panes are semitransparent devices; the
+            iridescent ones next to them are witness pieces.</figcaption>
+        </figure>
+
+        <div class="figrow two">
+          <figure>
+            <img src="izo2.JPG" alt="Sputtered IZO on glass, pink">
+          </figure>
+          <figure>
+            <img src="izo3.JPG" alt="Sputtered IZO on glass, blue">
+          </figure>
+        </div>
+        <p style="font-size:12.5px;color:var(--muted);max-width:52ch;margin:9px 0 0">
+          Sputtered IZO on bare glass, patterned through a shadow mask. Test
+          pieces like these are how a recipe gets characterised before it goes
+          anywhere near a device.</p>
+
+        <h4>Poster</h4>
+        <p><a href="reu_poster_website.pdf">Fabrication and Optimization of Semitransparent
+          Perovskite Solar Cells for Upconversion Integration</a> &mdash;
+          Tung D. Nguyen, Tyler K. Colenbrander, Daniel N. Congreve. Presented
+          at the Stanford EE REU symposium, 2026.</p>
+      </div>
+    </article>
+
+    <article class="entry" id="interconnects">
+      <div class="where">
+        <b>Pop Lab</b>
+        <span>Stanford EE</span>
+        <span>Apr 2026 &ndash; present</span>
+        <span>Prof. Eric Pop</span>
+      </div>
+      <div>
+        <h3>Electro-thermal transport in scaled interconnects</h3>
+
+        <p>The Wiedemann&ndash;Franz law ties a metal's thermal conductivity to
+          its electrical conductivity, and almost every compact thermal model of
+          on-chip wiring leans on it. In heavily scaled lines there is good
+          reason to expect it to fail. What we want to know is whether that
+          failure actually changes anything once the wire is sitting in a real
+          back-end stack, rather than modelled on its own.</p>
+
+        <h4>What I'm doing</h4>
+        <p>Computing Lorenz numbers from thermal conductivity and resistivity
+          across films from 27 nm to 10 &micro;m, and building a coupled
+          electro-thermal finite-element study in COMSOL &mdash; electric
+          currents, heat transfer and Joule heating together &mdash; to see how
+          much the deviation moves predicted self-heating. I taught myself
+          COMSOL for this project.</p>
+
+        <p>The analysis is ongoing and the results are still being reviewed
+          within the group, so I am not putting numbers here yet. A technical
+          report is in preparation.</p>
+
+        <figure style="max-width:420px">
+          <img src="beol_schematic.png"
+               alt="Simulation geometry: a single metal line within a
+               multi-tier back-end stack">
+          <figcaption>The simulation geometry &mdash; one line, with the
+            surrounding back-end tiers that turn out to matter.</figcaption>
+        </figure>
+
+        <h4>Where it goes next</h4>
+        <p>Extending the model to Al/WSe<sub>2</sub> contacts, and from there
+          toward AlN, other two-dimensional materials, and topological
+          semimetals &mdash; the candidate materials for interconnects and
+          contacts once copper stops scaling well.</p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Stanford, California</span>
+    <span><a href="mailto:tungdn@stanford.edu">tungdn@stanford.edu</a></span>
+  </div>
+</footer>
+
+<script>
+/* Show a labelled placeholder instead of a broken-image icon while an
+   image file is missing. Safe to delete once every photo is uploaded. */
+document.querySelectorAll('figure img').forEach(function(img){
+  img.addEventListener('error', function(){
+    var d = document.createElement('div');
+    d.className = 'imgfail';
+    d.textContent = img.getAttribute('src');
+    img.replaceWith(d);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tung Nguyen</title>
+<meta name="description" content="Tung Nguyen — B.S. candidate in Electrical
+  Engineering at Stanford. Perovskite photovoltaics and electro-thermal
+  transport in interconnects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .intro{ display:grid; grid-template-columns:1fr 268px; gap:56px;
+          padding:62px 0 10px; align-items:start }
+  .intro h1{ font-family:"Newsreader",Georgia,serif; font-weight:400;
+             font-size:clamp(46px,6.2vw,68px); line-height:1.02;
+             letter-spacing:-.022em; margin:0 0 16px }
+  .credential{ font-size:20.5px; line-height:1.55; color:var(--ink-soft);
+               margin:0 0 12px; max-width:46ch }
+  .credential .field{ font-weight:600; color:var(--ink) }
+  .affil{ font-family:"Newsreader",Georgia,serif; font-weight:500;
+          font-size:27px; line-height:1.2; letter-spacing:-.012em;
+          color:var(--ink); margin:0 0 4px }
+  .classyear{ font-size:16px; color:var(--muted); margin:0 0 26px }
+  .links{ display:flex; gap:20px; flex-wrap:wrap; font-size:14.5px; margin:0 }
+
+  /* One centred column. --qcol keeps the heading and the paragraphs on the
+     same left edge; they each compute ch differently. */
+  .question{ padding:44px 0 8px; --qcol:648px }
+  .question h2{ font-family:"Newsreader",Georgia,serif; font-weight:300;
+                font-size:clamp(30px,4.6vw,50px); line-height:1.12;
+                letter-spacing:-.018em; margin:0 auto 30px;
+                max-width:var(--qcol); text-align:center }
+  .question p{ font-size:17px; line-height:1.65; max-width:var(--qcol);
+               margin:0 auto 18px; color:var(--ink-soft) }
+  .qrule{ width:100%; max-width:var(--qcol); margin:44px auto 0; border:0;
+          border-top:1px solid var(--rule) }
+
+  .work{ padding:72px 0 0 }
+  .block{ display:grid; grid-template-columns:1fr 1fr; gap:52px;
+          align-items:center; padding:0 0 60px }
+  .block p{ margin:0 0 12px; color:var(--ink-soft); max-width:52ch;
+            font-size:16.5px; line-height:1.68 }
+  /* These two must out-rank .block p (0,1,1), so they are scoped to .block
+     as well. Bare .blocktitle / .more lose to it and are silently ignored. */
+  .block .blocktitle{ font-family:"Newsreader",Georgia,serif; font-weight:400;
+               font-size:42px; line-height:1.15; color:var(--muted);
+               margin:0 0 20px; max-width:none;
+               padding-bottom:12px; border-bottom:1px solid var(--rule) }
+  .block h3{ font-family:"Newsreader",Georgia,serif; font-weight:400;
+             font-size:30px; line-height:1.2; letter-spacing:-.014em;
+             margin:0 0 16px }
+  .block .more{ font-size:14.5px }
+  /* Both labs get an image, stacked, at full column width. */
+  .block .figrow{ margin:0; gap:26px }
+
+  .about{ padding:8px 0 70px }
+  .about .sechead{ font-size:25px }
+  .about p{ font-size:16.5px; line-height:1.68; max-width:var(--measure);
+            margin:0 0 18px; color:var(--ink-soft) }
+  .about p:last-child{ margin-bottom:0 }
+
+  /* text left, Nấm in the right gutter */
+  .aboutgrid{ display:grid; grid-template-columns:1fr 332px; gap:40px;
+              align-items:start }
+  .catcol{ border-left:1px solid var(--rule); padding-left:40px }
+  .catcol figure + figure{ margin-top:18px }
+  .catcap{ font-size:13px !important; color:var(--muted) !important;
+           margin:10px 0 0 !important }
+  .closer{ padding:0 0 78px }
+  .closer figure{ max-width:680px }
+
+  @media (max-width:860px){
+    .intro{ grid-template-columns:1fr; gap:30px; padding-top:44px }
+    .intro figure{ max-width:240px }
+    .block{ grid-template-columns:1fr; gap:26px; padding-bottom:52px }
+    .block .txt{ order:2 }
+    .aboutgrid{ grid-template-columns:1fr; gap:28px }
+    .catcol{ display:grid; grid-template-columns:1fr 1fr; gap:22px;
+             align-items:start; border-left:0; padding-left:0 }
+    .catcol figure + figure{ margin-top:0 }
+    .catcol .catcap{ grid-column:1 / -1 }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap masthead">
+  <a class="mark" href="index.html">Tung Nguyen</a>
+  <nav class="nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="tung_resume_website.pdf">Resume</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap intro">
+    <div>
+      <h1>Tung Nguyen</h1>
+      <p class="credential">B.S. Candidate in <span class="field">Electrical
+        Engineering</span>, Minor in <span class="field">Materials Science and
+        Engineering</span></p>
+      <p class="affil">Stanford University</p>
+      <p class="classyear">Class of 2028</p>
+      <p class="links">
+        <a href="mailto:tungdn@stanford.edu">tungdn@stanford.edu</a>
+        <a href="tung_resume_website.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/tungdnguyen/">LinkedIn</a>
+      </p>
+    </div>
+    <figure>
+      <img src="headshot_portfolio.JPG" alt="Tung Nguyen" data-ratio="portrait">
+    </figure>
+  </section>
+
+  <section class="wrap question">
+    <h2>How much energy is being lost, and how can we get it back?</h2>
+
+    <p>This question motivates my two research projects. One is making
+      perovskite solar cells that can absorb light normally transparent to
+      them. The other is a simulation study to question whether standard
+      assumptions and models about electro-thermal conductivity still hold in
+      metal interconnects as they scale with modern transistor
+      architectures.</p>
+
+    <p>The same question follows me outside the lab, to the Stanford Solar
+      Car Project and Sustainable Stanford. When I'm not
+      helping my fellow members at SSCP extract every single bit of energy out
+      of our array for a solar-powered car to race across a continent, I'm
+      finding ways to help Stanford save energy in its residential
+      buildings.</p>
+
+    <hr class="qrule">
+  </section>
+
+  <section class="wrap work">
+    <div class="block">
+      <div class="figrow">
+        <figure>
+          <img src="izo1.JPG" alt="Sputtered IZO on a glass substrate">
+          <figcaption>Sputtered IZO on glass.</figcaption>
+        </figure>
+        <figure>
+          <img src="beol_schematic.png"
+               alt="Simulation geometry: a single metal line within a
+               multi-tier back-end stack">
+          <figcaption>The back-end-of-line (BEOL) model used in the
+            simulation.</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <p class="blocktitle">Research</p>
+        <h3>Perovskite photovoltaics, and heat in interconnects</h3>
+        <p>In the Congreve Lab I fabricate inverted p&ndash;i&ndash;n perovskite
+          cells and sputter the transparent contacts that let them work as
+          semitransparent devices. In the Pop Lab I model what self-heating does
+          to copper and aluminium interconnects as they shrink.</p>
+        <p class="more"><a href="research.html">Read about the research</a></p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="txt">
+        <p class="blocktitle">Projects</p>
+        <h3>Arrays, buildings, and the losses in between</h3>
+        <p>Characterising commercial cells for a car that has to cross a
+          continent on sunlight, finding where Stanford's residential buildings
+          waste energy, and building the fixtures that make a deposition
+          repeatable.</p>
+        <p class="more"><a href="projects.html">See the projects</a></p>
+      </div>
+      <figure>
+        <img src="sscp_car.JPG"
+             alt="Stanford's solar car, its array and sponsor decals lit by
+             low sun">
+        <figcaption>Stanford Solar Car Project, Array &amp; Battery.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap about">
+    <h2 class="sechead">A little more</h2>
+
+    <div class="aboutgrid">
+      <div class="abouttext">
+        <p>I had zero lab experience before Stanford, and my interest has always
+          been in sustainability through community work and policy. However, I've
+          been interested in science and technology ever since I was a kid (as
+          with most kids with similar interests, this started with planes and
+          spaceships!). After trying out some EE and MatSci classes, I found a
+          deep passion in this area of research. Now, instead of a top-down
+          approach from policy, my work is, in a way, a bottom-up approach to
+          sustainability: photovoltaics that can be more efficient, and
+          interconnects that waste less energy as heat.</p>
+
+        <p>As much as I love being in the lab, one needs to go outside from time
+          to time. When I'm not waiting for my deposition to finish or weighing
+          precursors, I enjoy photography, going on side quests with my friends,
+          and lending a helping hand to my friends at Solar Car (we're building a
+          new car! first in over half a decade). I used to do film photography
+          and really loved the intentionality of it, and how it forces you to
+          slow down. Sadly the cost of film and developing is getting crazy, but
+          I do miss it and hope to return to it soon. Also, do ask me about my
+          cat. His name is N&#7845;m, which is Vietnamese for mushroom &mdash;
+          still have no idea why my sister gave him that name. He is extremely
+          cute, and I'm very open to sharing his cuteness through pictures.</p>
+
+        <p>Please feel very free to reach out to chat!</p>
+      </div>
+
+      <aside class="catcol">
+        <figure><img src="cat1.JPG" alt="N&#7845;m, standing up"></figure>
+        <figure><img src="cat2.JPG" alt="N&#7845;m, on the sofa"></figure>
+        <p class="catcap">Always happy to share more pics of this guy.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Technical Skills</h2>
+      <div class="bandtext">
+        <p>Member of the Stanford Nanofabrication Facility and Soft Materials
+          Facility. Qualified user on the Lesker sputterer, Angstrom thermal
+          evaporator, Bruker Dektak XT-A profilometer, and Agilent Cary 6000i
+          UV/Vis/NIR. Glovebox spin coating, Keithley SMU four-point probe,
+          solar simulator J&ndash;V characterisation, infrared and
+          electroluminescence inspection.</p>
+        <p>COMSOL, Python, MATLAB, R, Verilog, LaTeX, Fusion 360, Onshape.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap closer">
+    <figure>
+      <img src="finished_devices.JPG" alt="Finished perovskite devices in a petri dish">
+      <figcaption>Finished devices, silver contacts evaporated last.</figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Stanford, California</span>
+    <span><a href="mailto:tungdn@stanford.edu">tungdn@stanford.edu</a></span>
+  </div>
+</footer>
+
+<script>
+/* Show a labelled placeholder instead of a broken-image icon while an
+   image file is missing. Safe to delete once every photo is uploaded. */
+document.querySelectorAll('figure img').forEach(function(img){
+  img.addEventListener('error', function(){
+    var d = document.createElement('div');
+    d.className = 'imgfail' +
+      (img.dataset.ratio === 'portrait' ? ' portrait' : '');
+    d.textContent = img.getAttribute('src');
+    img.replaceWith(d);
+  });
+});
+</script>
+</body>
+</html>
