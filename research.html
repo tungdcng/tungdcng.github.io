@@ -15,18 +15,29 @@
               margin:22px 0 6px; max-width:var(--measure) }
   .stackcol h5{ font-size:13px; font-weight:600; color:var(--muted);
                 margin:0 0 8px }
-  .layers{ list-style:none; margin:0; padding:0; border:1px solid var(--rule);
-           background:var(--paper-2) }
-  .layers li{ display:grid; grid-template-columns:12px 1fr auto;
-              align-items:center; gap:10px; padding:0 10px 0 0;
-              border-bottom:1px solid var(--rule); font-size:13px }
-  .layers li:last-child{ border-bottom:0 }
-  .sw{ align-self:stretch }
-  .ln{ padding:7px 0 }
-  .lt{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums }
-  .layers li.tall .ln{ padding:16px 0 }
+  /* Each row is filled with its material color and the label sits on it.
+     .dark flips the text for the two rows too dark for ink.
+     Scoped to .entry because .entry ul / .entry li in style.css are (0,1,1)
+     and would otherwise force a 20px indent and 6px gaps between rows. */
+  .entry .layers{ list-style:none; margin:0; padding:0;
+                  border:1px solid var(--rule); overflow:hidden }
+  .entry .layers li{ display:grid; grid-template-columns:1fr auto;
+                     align-items:center; gap:12px; margin:0; padding:10px 12px;
+                     font-size:13px; color:var(--ink) }
+  .entry .layers li + li{ border-top:1px solid rgba(0,0,0,.09) }
+  .entry .layers li.dark{ color:#F4F1EB }
+  .entry .layers li.tall{ padding:20px 12px }
+  .ln{ font-weight:500 }
+  .lt{ font-size:12px; opacity:.72 }
   .figrow{ display:grid; grid-template-columns:1fr 1fr; gap:26px;
            margin:22px 0 4px; max-width:var(--measure) }
+  /* Numbered by hand as [n] to match the superscript citations, so the
+     list marker is suppressed and the indent hangs instead. */
+  .entry .refs{ list-style:none; margin:0; padding:0; font-size:12px;
+                line-height:1.5; color:var(--muted);
+                max-width:var(--measure) }
+  .entry .refs li{ margin:0 0 7px; padding-left:26px; text-indent:-26px }
+  .entry .refs li:last-child{ margin-bottom:0 }
   @media (max-width:860px){
     .stackwrap,.figrow{ grid-template-columns:1fr; gap:22px }
   }
@@ -47,99 +58,143 @@
 <main>
   <section class="wrap pagehead">
     <h1>Research</h1>
-    <p>Two projects, both about energy at the scale of a single device: light a
-      solar cell cannot use, and heat a wire cannot avoid.</p>
+    <p>Two projects, both about energy at the device scale.</p>
+
+    <p>How do you make a solar cell absorb the part of the spectrum it's
+      transparent to?</p>
+
+    <p>How well does the Wiedemann-Franz law predict thermal conductivity in
+      an interconnect that keeps getting smaller, and does changing the
+      surrounding dielectric affect the answer?</p>
   </section>
 
   <section class="wrap section">
     <article class="entry" id="perovskite">
       <div class="where">
         <b>Congreve Lab</b>
-        <span>Stanford EE</span>
+        <span><strong>PI:</strong> Prof. Daniel Congreve</span>
+        <span><strong>PhD mentor:</strong> Tyler K. Colenbrander</span>
+        <span>Department of Electrical Engineering, Stanford University</span>
         <span>Jun 2026 &ndash; present</span>
-        <span>EE REU, then continuing</span>
+        <span>EE REU Program and continuing through the academic year</span>
       </div>
       <div>
-        <h3>Semitransparent perovskite cells for upconversion</h3>
+        <h3>Boosting Perovskite Solar Cell Efficiency Through
+          Triplet-Triplet Annihilation Upconversion</h3>
 
-        <p>A silicon or perovskite cell throws away every photon below its
-          bandgap. Triplet&ndash;triplet annihilation upconversion recovers some
-          of them by combining two low-energy photons into one the cell can
-          absorb &mdash; but the upconverter has to sit behind the cell, which
-          means the light has to get through the back contact first. A normal
-          device has a hundred nanometres of evaporated silver there.</p>
+        <p>A material can only absorb light with energy larger than its
+          bandgap, and that material will be essentially transparent to most of
+          the light below that energy. In the context of solar cells, this
+          means that a very significant amount of light being emitted by the
+          Sun is not being absorbed and turned into usable power.</p>
 
-        <p>So the back contact has to become transparent, and the only practical
-          way to do that is sputtering a conducting oxide. Sputtering is
-          violent: energetic species from the plasma reach the organic layers
-          underneath and damage them long before you have a usable film. That
-          conflict is the whole problem.</p>
+        <p>This is where upconversion comes in. The idea is to put a layer
+          behind the cell that takes two low-energy, sub-bandgap photons and
+          combines their energy into one higher-energy photon that the
+          perovskite can absorb. So instead of losing that infrared, you can
+          convert and absorb part of it.</p>
+
+        <p>The problem is the silver at the bottom of our cell, and, as we all
+          know, silver is reflective and opaque. This applies to the
+          sub-bandgap photons as well. These low-energy photons would pass
+          straight through our perovskite, but instead of going to the
+          upconversion layer at the back, they're being blocked by the
+          silver.</p>
+
+        <p>This motivates us to make solar cells with a transparent contact,
+          and hence, the semitransparent perovskite solar cell. But another
+          problem exists here: to deposit this transparent conductive oxide
+          (TCO) to serve as our contact, we have to use a physical vapor
+          deposition method called sputtering. This is a very energetic process
+          that can damage the underlying solar cell layers, which prompts us to
+          add in a buffer to protect our cells from sputtering damage. However,
+          these layers can add electrical resistance to the cell, significantly
+          impeding the performance of our cell.</p>
+
+        <p>My task is to:</p>
+        <ul>
+          <li>Find the optimal material and thickness for this buffer layer,
+            such that it is thin enough to not add significant series
+            resistance, but at the same time is able to protect the underlying
+            layers from sputter damage.</li>
+          <li>Optimize the sputtering recipe to ensure both material
+            transparency and electrical conductivity.</li>
+        </ul>
 
         <div class="stackwrap">
           <div class="stackcol">
             <h5>Opaque baseline &mdash; champion 18.9% PCE</h5>
             <ul class="layers">
-              <li><span class="sw" style="background:var(--m-ag)"></span><span class="ln">Ag</span><span class="lt">100 nm</span></li>
-              <li><span class="sw" style="background:var(--m-bcp)"></span><span class="ln">BCP</span><span class="lt">6&ndash;15 nm</span></li>
-              <li><span class="sw" style="background:var(--m-c60)"></span><span class="ln">C<sub>60</sub></span><span class="lt">5&ndash;25 nm</span></li>
-              <li class="tall"><span class="sw" style="background:var(--m-pvk)"></span><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
-              <li><span class="sw" style="background:var(--m-sam)"></span><span class="ln">2PACz</span><span class="lt">monolayer</span></li>
-              <li><span class="sw" style="background:var(--m-ito)"></span><span class="ln">ITO</span><span class="lt">contact</span></li>
-              <li><span class="sw" style="background:var(--m-glass)"></span><span class="ln">Glass</span><span class="lt"></span></li>
+              <li style="background:var(--m-ag)"><span class="ln">Ag</span><span class="lt">back contact and reflector</span></li>
+              <li style="background:var(--m-bcp)"><span class="ln">BCP</span><span class="lt">buffer layer</span></li>
+              <li class="dark" style="background:var(--m-c60)"><span class="ln">C<sub>60</sub></span><span class="lt">electron transport layer</span></li>
+              <li class="tall dark" style="background:var(--m-pvk)"><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
+              <li style="background:var(--m-sam)"><span class="ln">2PACz</span><span class="lt">hole transport layer</span></li>
+              <li style="background:var(--m-ito)"><span class="ln">ITO</span><span class="lt">front electrode (pre-patterned)</span></li>
+              <li style="background:var(--m-glass)"><span class="ln">Glass</span><span class="lt">substrate</span></li>
             </ul>
           </div>
           <div class="stackcol">
             <h5>Semitransparent &mdash; best 13.9% PCE</h5>
             <ul class="layers">
-              <li><span class="sw" style="background:var(--m-ag)"></span><span class="ln">Ag</span><span class="lt">edge contact</span></li>
-              <li><span class="sw" style="background:var(--m-izo)"></span><span class="ln">IZO</span><span class="lt">sputtered</span></li>
-              <li><span class="sw" style="background:var(--m-bcp)"></span><span class="ln">BCP</span><span class="lt">6&ndash;15 nm</span></li>
-              <li><span class="sw" style="background:var(--m-c60)"></span><span class="ln">C<sub>60</sub></span><span class="lt">5&ndash;25 nm</span></li>
-              <li class="tall"><span class="sw" style="background:var(--m-pvk)"></span><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
-              <li><span class="sw" style="background:var(--m-sam)"></span><span class="ln">2PACz</span><span class="lt">monolayer</span></li>
-              <li><span class="sw" style="background:var(--m-ito)"></span><span class="ln">ITO</span><span class="lt">contact</span></li>
-              <li><span class="sw" style="background:var(--m-glass)"></span><span class="ln">Glass</span><span class="lt"></span></li>
+              <li style="background:var(--m-ag)"><span class="ln">Ag</span><span class="lt">edge contact</span></li>
+              <li style="background:var(--m-izo)"><span class="ln">IZO</span><span class="lt">transparent back electrode</span></li>
+              <li style="background:var(--m-bcp)"><span class="ln">BCP</span><span class="lt">buffer layer</span></li>
+              <li class="dark" style="background:var(--m-c60)"><span class="ln">C<sub>60</sub></span><span class="lt">electron transport layer</span></li>
+              <li class="tall dark" style="background:var(--m-pvk)"><span class="ln">Perovskite</span><span class="lt">absorber</span></li>
+              <li style="background:var(--m-sam)"><span class="ln">2PACz</span><span class="lt">hole transport layer</span></li>
+              <li style="background:var(--m-ito)"><span class="ln">ITO</span><span class="lt">front electrode (pre-patterned)</span></li>
+              <li style="background:var(--m-glass)"><span class="ln">Glass</span><span class="lt">substrate</span></li>
             </ul>
           </div>
         </div>
-        <p style="font-size:12.5px;color:var(--muted);max-width:52ch">
-          Silver stays in both. On the semitransparent devices it is patterned
-          at the edge as a contact rather than covering the active area.
-          Sb<sub>2</sub>O<sub>3</sub> and SnO<sub>2</sub> buffer routes between
-          C<sub>60</sub> and the oxide are still being explored.</p>
+        <p class="note">
+          Both opaque and semitransparent devices have silver as the final
+          electrical contact. The difference is that silver is only deposited
+          on the edges of the substrate, instead of covering the active area
+          (and serving as the back reflector) in the opaque devices.</p>
 
         <h4>What I did</h4>
-        <p>Fabricated 120+ substrates end to end &mdash; glovebox spin coating
-          through thermal evaporation &mdash; then sputtered IZO and ITO top
-          contacts on the Lesker, with thickness on the Dektak and transmission
-          on the Cary 6000i.</p>
+        <p>Fabricated 120+ substrates and characterized their performance. This
+          process involves glovebox spin coating (2PACz, perovskite), thermal
+          evaporation (C<sub>60</sub>, buffer layers, silver) and sputtering
+          (IZO and ITO). I then used a solar simulator to characterize
+          electrical performance, profilometry to check film thicknesses,
+          photoluminescence to look for PL quenching, and UV-Vis to see the
+          transparency of individual films and the whole stack.</p>
 
         <h4>What came out of it</h4>
         <ul>
-          <li>The group's first working semitransparent cells.</li>
-          <li>A two-step soft-sputter recipe &mdash; 37 W seed, then 100 W bulk,
-            deposited directly onto the BCP &mdash; that cut median series
-            resistance 4&times; and raised shunt resistance 2.7&times;, taking
-            the best device from 10.6% to 13.9% PCE at over 80% transmittance
-            beyond 750 nm.</li>
-          <li>A root-cause failure analysis of a batch that came out shorted.
-            Bare-glass witness samples through four-point probe, UV-Vis and
-            photoluminescence traced the yield limiter to evaporation-mask step
-            coverage; a masking split then gave 8/8 working devices against 4/8
+          <li>Working semitransparent perovskite solar cells!</li>
+          <li>A two-step soft-sputter recipe, with a 37 W seed layer, then
+            100 W for the bulk layer, deposited directly onto the BCP. This
+            recipe cut median series resistance 4&times; and raised shunt
+            resistance 2.7&times;, taking the best device from 10.6% to 13.9%
+            PCE at over 80% transmittance beyond 750 nm.</li>
+          <li>A root-cause failure analysis of a batch that came out shunted.
+            This traced the yield limiter to evaporation-mask step coverage;
+            a masking split then gave 8/8 working devices against 4/8
             without.</li>
           <li>A full-factorial DOE crossing C<sub>60</sub> (5&ndash;25 nm) and
-            Sb<sub>2</sub>O<sub>3</sub> (5&ndash;15 nm) thickness. Best stack in
-            the tested range was 25/5 nm &mdash; at a corner of the design
-            space, so the true optimum may sit outside it &mdash; with remaining
-            losses attributed to series resistance.</li>
+            Sb<sub>2</sub>O<sub>3</sub> (5&ndash;15 nm) thickness. The best
+            stack in the tested range was 25/5 nm. Furthermore, I tested
+            various thicknesses for SnO<sub>2</sub> and BCP as other candidates
+            for the buffer layer.</li>
         </ul>
 
         <figure>
           <img width="1600" height="1200" decoding="async" loading="lazy" src="device_after_sputter.JPG"
                alt="A batch of substrates in the holder after sputtering">
-          <figcaption>A batch straight out of the sputterer, still in the
-            holder. The purple panes are semitransparent devices; the
-            iridescent ones next to them are witness pieces.</figcaption>
+          <figcaption>
+            <p>A device batch straight out of the sputterer, still in the
+              holder. The purple panes are semitransparent devices, alongside a
+              bare glass substrate to check by profilometry that the sputtering
+              recipe reached the desired thickness.</p>
+            <p>These devices will then undergo the final step of the
+              fabrication process, where silver contacts are thermally
+              evaporated, but leaving the active area masked such that they can
+              be transparent to sub-bandgap photons.</p>
+          </figcaption>
         </figure>
 
         <div class="figrow two">
@@ -150,13 +205,13 @@
             <img width="1600" height="1201" decoding="async" loading="lazy" src="izo3.JPG" alt="Sputtered IZO on glass, blue">
           </figure>
         </div>
-        <p style="font-size:12.5px;color:var(--muted);max-width:52ch;margin:9px 0 0">
-          Sputtered IZO on bare glass, patterned through a shadow mask. Test
-          pieces like these are how a recipe gets characterised before it goes
-          anywhere near a device.</p>
+        <p class="note">
+          Sputtered IZO on bare glass, patterned through a shadow mask. This is
+          the only way we are able to confidently know how much IZO has been
+          sputtered onto our devices.</p>
 
         <h4>Poster</h4>
-        <p><a href="reu_poster_website.pdf">Fabrication and Optimization of Semitransparent
+        <p><a href="tungdn_REU_poster.pdf">Fabrication and Optimization of Semitransparent
           Perovskite Solar Cells for Upconversion Integration</a> &mdash;
           Tung D. Nguyen, Tyler K. Colenbrander, Daniel N. Congreve. Presented
           at the Stanford EE REU symposium, 2026.</p>
@@ -166,43 +221,88 @@
     <article class="entry" id="interconnects">
       <div class="where">
         <b>Pop Lab</b>
-        <span>Stanford EE</span>
+        <span><strong>PI:</strong> Prof. Eric Pop</span>
+        <span><strong>PhD mentor:</strong> Young Suh Song</span>
+        <span>Department of Electrical Engineering, Stanford University</span>
         <span>Apr 2026 &ndash; present</span>
-        <span>Prof. Eric Pop</span>
+        <span>Continuing through the academic year</span>
       </div>
       <div>
-        <h3>Electro-thermal transport in scaled interconnects</h3>
+        <h3>Effects of Interlayer Dielectric Thermal Conductivity and Scaling
+          on the Wiedemann-Franz Law Approximation in Metal Interconnects by
+          Electro-thermal FEM Simulation</h3>
 
-        <p>The Wiedemann&ndash;Franz law ties a metal's thermal conductivity to
+        <p>The Wiedemann-Franz law ties a metal's thermal conductivity to
           its electrical conductivity, and almost every compact thermal model of
           on-chip wiring leans on it. In heavily scaled lines there is good
           reason to expect it to fail. What we want to know is whether that
           failure actually changes anything once the wire is sitting in a real
-          back-end stack, rather than modelled on its own.</p>
+          back-end stack, rather than modeled on its own.</p>
 
         <h4>What I'm doing</h4>
-        <p>Computing Lorenz numbers from thermal conductivity and resistivity
-          across films from 27 nm to 10 &micro;m, and building a coupled
-          electro-thermal finite-element study in COMSOL &mdash; electric
-          currents, heat transfer and Joule heating together &mdash; to see how
-          much the deviation moves predicted self-heating. I taught myself
-          COMSOL for this project.</p>
+        <p>As CMOS technology evolves to scale down the size of individual
+          devices, so has the thickness of the metal interconnects connecting
+          them together. As their dimensions approach the electron mean free
+          path (MFP), boundary scattering introduces an additional,
+          thickness-dependent contribution to the total scattering rate,
+          causing resistivity (&rho;) to rise faster than thermal conductivity
+          (&kappa;) decreases and the Wiedemann-Franz (WF) law to break
+          down.<sup>1</sup></p>
 
-        <p>This is a work in progress. A technical report is in
-          preparation.</p>
+        <p>To analyze the effect of scaling on electro-thermal properties of
+          metals, we calculate the modified Lorenz number
+          (L* = &kappa;&rho;/T) for Cu and Al thin films with thickness from
+          27 to 10,000 nm using data extracted from
+          literature.<sup>1&ndash;7</sup> We found L* to be close to the
+          Sommerfeld value at bulk thickness but several times larger in the
+          nanometric regime, indicating that as interconnect dimensions
+          approach their electron MFP, the proportionality between electrical
+          and thermal conductivity provided by the WF law becomes less
+          reliable.<sup>1,&nbsp;3</sup></p>
 
-        <figure style="max-width:420px">
-          <img width="2400" height="1600" decoding="async" loading="lazy" src="beol_schematic.png"
-               alt="Simulation geometry: a single metal line within a
-               multi-tier back-end stack">
-          <figcaption>The simulation geometry.</figcaption>
-        </figure>
+        <p>This result is derived from measurements on thin films, but thin
+          films alone do not make up devices. Therefore, I taught myself COMSOL
+          and built a coupled electro-thermal FEM model.</p>
 
-        <h4>Where it goes next</h4>
-        <p>Extending the model to Al/WSe<sub>2</sub> contacts, and from there
-          toward AlN, other two-dimensional materials, and topological
-          semimetals &mdash; the candidate materials for interconnects and
-          contacts once copper stops scaling well.</p>
+        <p>What started as thin-film measurements from literature turned into a
+          simulation study of a multi-level back-end-of-line interconnect stack
+          embedded in a range of dielectrics, swept from conventional oxide to
+          higher thermal conductivity candidates. Each dielectric material case
+          is solved twice, once with WF-derived &kappa; and once with measured
+          &kappa;, to see how much that choice changes predicted
+          self-heating.</p>
+
+        <p><strong>This is a work in progress.</strong></p>
+
+        <h4>References</h4>
+        <ol class="refs">
+          <li>[1] Islam, M.R. et al. Evaluating size effects on the thermal
+            conductivity and electron-phonon scattering rates of copper thin
+            films for experimental validation of Matthiessen's rule.
+            <i>Nat. Commun.</i> <b>15</b>, 9167 (2024).</li>
+          <li>[2] Feng, B., Li, Z. &amp; Zhang, X. Prediction of size effect on
+            thermal conductivity of nanoscale metallic films.
+            <i>Thin Solid Films</i> <b>517</b>, 2803&ndash;2807 (2009).</li>
+          <li>[3] Cui, X., Hutt, D.A. &amp; Conway, P.P. Evolution of
+            microstructure and electrical conductivity of electroless copper
+            deposits on a glass substrate. <i>Thin Solid Films</i>
+            <b>520</b>, 6095&ndash;6099 (2012).</li>
+          <li>[4] Karoui, A. Aluminum ultra thin film grown by physical vapor
+            deposition for solar cell electric nanocontacts.
+            <i>ECS Trans.</i> <b>41</b>, 21&ndash;28 (2011).</li>
+          <li>[5] Boiko, B.T., Pugachev, A.T. &amp; Bratsychin, V.M. Method for
+            the determination of the thermophysical properties of evaporated
+            thin films. <i>Thin Solid Films</i> <b>17</b>,
+            157&ndash;161 (1973).</li>
+          <li>[6] Brandt, R. &amp; Neuer, G. Electrical resistivity and thermal
+            conductivity of pure aluminum and aluminum alloys up to and above
+            the melting temperature. <i>Int. J. Thermophys.</i> <b>28</b>,
+            1429&ndash;1446 (2007).</li>
+          <li>[7] Touloukian, Y.S., Powell, R., Ho, C. &amp; Klemens, P.
+            <i>Thermophysical properties of matter, Vol. 1: Thermal
+            conductivity &mdash; metallic elements and alloys</i>
+            (IFI/Plenum, 1970).</li>
+        </ol>
       </div>
     </article>
   </section>

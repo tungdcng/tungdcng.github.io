@@ -26,7 +26,7 @@
   .classyear{ font-size:16px; color:var(--muted); margin:0 0 26px }
   .links{ display:flex; gap:20px; flex-wrap:wrap; font-size:14.5px; margin:0 }
 
-  /* One centred column. --qcol keeps the heading and the paragraphs on the
+  /* One centered column. --qcol keeps the heading and the paragraphs on the
      same left edge; they each compute ch differently. */
   .question{ padding:44px 0 8px; --qcol:648px }
   .question h2{ font-family:"Newsreader",Georgia,serif; font-weight:300;
@@ -53,8 +53,6 @@
              font-size:30px; line-height:1.2; letter-spacing:-.014em;
              margin:0 0 16px }
   .block .more{ font-size:14.5px }
-  /* Both labs get an image, stacked, at full column width. */
-  .block .figrow{ margin:0; gap:26px }
 
   .about{ padding:8px 0 70px }
   .about .sechead{ font-size:25px }
@@ -121,11 +119,12 @@
     <h2>How much energy is being lost, and how can we get it back?</h2>
 
     <p>This question motivates my two research projects. One is making
-      perovskite solar cells that can absorb light normally transparent to
-      them. The other is a simulation study to question whether standard
-      assumptions and models about electro-thermal conductivity still hold in
-      metal interconnects as they scale with modern transistor
-      architectures.</p>
+      perovskite solar cells that can absorb light they're normally
+      transparent to. The other is a simulation study to question whether
+      standard assumptions and models about electrical and thermal
+      conductivity still hold in metal interconnects as they scale, and
+      whether the answer depends on what dielectric material surrounds
+      them.</p>
 
     <p>The same question follows me outside the lab, to the Stanford Solar
       Car Project and Sustainable Stanford. When I'm not
@@ -139,26 +138,25 @@
 
   <section class="wrap work">
     <div class="block">
-      <div class="figrow">
-        <figure>
-          <img width="1600" height="1201" decoding="async" loading="lazy" src="izo1.JPG" alt="Sputtered IZO on a glass substrate">
-          <figcaption>Sputtered IZO on glass.</figcaption>
-        </figure>
-        <figure>
-          <img width="2400" height="1600" decoding="async" loading="lazy" src="beol_schematic.png"
-               alt="Simulation geometry: a single metal line within a
-               multi-tier back-end stack">
-          <figcaption>The back-end-of-line (BEOL) model used in the
-            simulation.</figcaption>
-        </figure>
-      </div>
+      <figure>
+        <img width="1600" height="1201" decoding="async" loading="lazy" src="izo1.JPG" alt="Sputtered IZO on a glass substrate">
+        <figcaption>Sputtered IZO on glass.</figcaption>
+      </figure>
       <div class="txt">
         <p class="blocktitle">Research</p>
         <h3>Perovskite photovoltaics, and heat in interconnects</h3>
-        <p>In the Congreve Lab I fabricate inverted p&ndash;i&ndash;n perovskite
-          cells and sputter the transparent contacts that let them work as
-          semitransparent devices. In the Pop Lab I model what self-heating does
-          to copper and aluminium interconnects as they shrink.</p>
+        <p>In the Congreve Lab, I fabricate inverted p-i-n
+          perovskite solar cells. The twist here is that these cells are
+          semitransparent, such that unabsorbed photons can get to the
+          upconversion layer. This upconversion layer can convert two
+          low-energy photons that would pass straight through the cell into one
+          higher-energy photon that the cell can absorb and turn into usable
+          power.</p>
+
+        <p>In the Pop Lab, I model self-heating in metal interconnects as they
+          shrink, and see whether the standard approximation for thermal
+          conductivity still holds, and whether that depends on the dielectric
+          surrounding them.</p>
         <p class="more"><a href="research.html">Read about the research</a></p>
       </div>
     </div>
@@ -167,7 +165,7 @@
       <div class="txt">
         <p class="blocktitle">Projects</p>
         <h3>Arrays, buildings, and the losses in between</h3>
-        <p>Characterising commercial cells for a car that has to cross a
+        <p>Characterizing commercial cells for a car that has to cross a
           continent on sunlight, finding where Stanford's residential buildings
           waste energy, and building the fixtures that make a deposition
           repeatable.</p>
@@ -228,7 +226,7 @@
           Facility. Qualified user on the Lesker sputterer, Angstrom thermal
           evaporator, Bruker Dektak XT-A profilometer, and Agilent Cary 6000i
           UV/Vis/NIR. Glovebox spin coating, Keithley SMU four-point probe,
-          solar simulator J&ndash;V characterisation, infrared and
+          solar simulator J&ndash;V characterization, infrared and
           electroluminescence inspection.</p>
         <p>COMSOL, Python, MATLAB, R, Verilog, LaTeX, Fusion 360, Onshape.</p>
       </div>

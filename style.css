@@ -1,6 +1,6 @@
 /* =========================================================
    Tung Nguyen — tungducnguyen.com
-   All colour lives in :root. Change it here, nowhere else.
+   All color lives in :root. Change it here, nowhere else.
    ========================================================= */
 
 :root{
@@ -69,7 +69,7 @@ sub,sup{ line-height:0 }
 }
 
 /* ---------- inner page headers ---------- */
-.pagehead{ padding:62px 0 50px; max-width:58ch }
+.pagehead{ padding:62px 34px 50px; max-width:900px; text-align:center }
 .pagehead h1{
   font-family:"Newsreader", Georgia, serif; font-weight:300;
   font-size:clamp(36px,5vw,54px); line-height:1.06;
@@ -77,9 +77,10 @@ sub,sup{ line-height:0 }
 }
 .pagehead p{
   font-family:"Newsreader", Georgia, serif; font-weight:300;
-  font-size:clamp(18px,1.9vw,22px); line-height:1.5;
-  color:var(--ink-soft); margin:0; max-width:46ch;
+  font-size:clamp(18px,1.9vw,22px); line-height:1.55;
+  color:var(--ink-soft); margin:0 auto; max-width:780px;
 }
+.pagehead p + p{ margin-top:20px }
 
 /* ---------- sections ---------- */
 .section{ padding:0 0 78px }
@@ -97,8 +98,10 @@ sub,sup{ line-height:0 }
 /* hairline between the side label and its content, matching .sechead */
 .entry > .where + *{ border-left:1px solid var(--rule); padding-left:44px }
 .where{ font-size:14px; line-height:1.5 }
-.where b{ font-weight:600; display:block }
-.where span{ color:var(--muted); display:block }
+.where b{ font-weight:600; display:block; margin-bottom:11px }
+.where span{ color:var(--muted); display:block; margin-bottom:9px }
+.where span:last-child{ margin-bottom:0 }
+.where strong{ font-weight:600; color:var(--ink-soft) }
 .entry h3{
   font-family:"Newsreader", Georgia, serif; font-weight:400;
   font-size:25px; line-height:1.25; margin:-4px 0 14px;
@@ -107,6 +110,9 @@ sub,sup{ line-height:0 }
 .entry h4{ font-size:14px; font-weight:600; margin:24px 0 6px; color:var(--muted) }
 .entry p{ margin:0 0 11px; max-width:var(--measure); color:var(--ink-soft) }
 .entry p:last-child{ margin-bottom:0 }
+/* IBM Plex Sans is only loaded at 400/500/600, so pin bold to 600 rather
+   than letting the default 700 fall back. */
+.entry strong{ font-weight:600 }
 .entry ul{ margin:0 0 11px; padding-left:20px; max-width:var(--measure);
   color:var(--ink-soft) }
 .entry li{ margin-bottom:6px }
@@ -123,6 +129,15 @@ sub,sup{ line-height:0 }
 figure{ margin:0 }
 figure img{ display:block; width:100%; height:auto; border:1px solid var(--rule) }
 figcaption{ font-size:12.5px; color:var(--muted); margin-top:9px;
+  line-height:1.5; max-width:52ch }
+figcaption p{ margin:0 0 8px }
+figcaption p:last-child{ margin-bottom:0 }
+/* .entry p (0,1,1) beats plain "figcaption p" (0,0,2) and would repaint
+   caption paragraphs in --ink-soft at the wider --measure. */
+.entry figcaption p{ color:inherit; max-width:none }
+/* Caption text that sits outside a <figure>. Kept identical to figcaption;
+   scoped to .entry so it out-ranks .entry p (0,1,1). */
+.entry .note{ font-size:12.5px; color:var(--muted); margin:9px 0 0;
   line-height:1.5; max-width:52ch }
 .imgfail{
   border:1px dashed var(--rule); background:var(--paper-2);
@@ -168,7 +183,7 @@ footer a{ color:var(--muted) }
   .wrap{ padding:0 22px }
   .entry, .band .wrap{ grid-template-columns:1fr; gap:14px }
   .entry > .where + *, .band .bandtext{ border-left:0; padding-left:0 }
-  .pagehead{ padding:44px 0 38px }
+  .pagehead{ padding:44px 22px 38px }
   .section{ padding-bottom:58px }
 }
 @media (prefers-reduced-motion:reduce){
