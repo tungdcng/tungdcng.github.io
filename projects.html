@@ -11,8 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .lead{ max-width:var(--measure); margin:0 0 42px }
-  .lead figure{ margin-bottom:0 }
+  /* Sources here are a mix of 4:3 and 3:4, which in a shared row leaves the
+     landscape ones ~120px short and opens a gap underneath. A square crop
+     makes every cell the same height, at a 25% crop either way. */
+  .entry .figrow img{ aspect-ratio:1/1; object-fit:cover }
+  .entry .figrow{ margin:22px 0 0 }
+  .entry .figrow + .figrow{ margin-top:22px }
 </style>
 </head>
 <body>
@@ -36,15 +40,6 @@
   </section>
 
   <section class="wrap section">
-    <div class="lead">
-      <figure>
-        <img width="1200" height="1600" decoding="async" loading="lazy" src="sscp_encapsulation.JPG"
-             alt="An encapsulated solar module on the bench">
-        <figcaption>An encapsulated module from the pilot. We are building a
-          new car &mdash; the first in over half a decade.</figcaption>
-      </figure>
-    </div>
-
     <article class="entry">
       <div class="where">
         <b>Stanford Solar Car Project</b>
@@ -68,6 +63,21 @@
             temperature-driven efficiency loss, to inform thermal and cooling
             design for the next-generation array.</li>
         </ul>
+
+        <div class="figrow two">
+          <figure>
+            <img width="1067" height="1600" decoding="async" loading="lazy" src="sscp_car.JPG"
+                 alt="Stanford's solar car, its array and sponsor decals lit by
+                 low sun">
+            <figcaption>Azimuth and its array.</figcaption>
+          </figure>
+          <figure>
+            <img width="1200" height="1600" decoding="async" loading="lazy" src="sscp_encapsulation.JPG"
+                 alt="An encapsulated solar module on the bench">
+            <figcaption>A module we encapsulated in-house. We are building a
+              new car (the first in over half a decade!!).</figcaption>
+          </figure>
+        </div>
 
         <div class="figrow three">
           <figure>
@@ -96,30 +106,14 @@
         <h3>Saving energy in Stanford's residential buildings</h3>
         <ul>
           <li>Audited 320 common spaces across 45 buildings and roughly 2,900
-            lighting elements to map occupancy-sensor coverage. Only 36.9% of
-            spaces had them.</li>
+            lighting elements to map occupancy-sensor coverage, found only
+            36.9% of spaces had them.</li>
           <li>Built an ROI model from the audit data projecting 66,421 kWh and
             $11,941 in annual savings against $65,650 upfront, a payback of
             about 5.5 years.</li>
           <li>Evaluated vendors and specified hardware for a window-sensor
             HVAC pilot.</li>
         </ul>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="where">
-        <b>Congreve Lab</b>
-        <span>Fusion 360, Onshape</span>
-      </div>
-      <div>
-        <h3>Cleanroom fixtures</h3>
-        <p>Sample geometry was quietly a variable in our deposition results. A
-          masking split during sputtering gave 8/8 working devices with a
-          modified mask against 4/8 without, which was enough to justify
-          designing proper fixtures. Substrate holders and evaporation masks are
-          in use; the latest sputter mask is designed but not yet fabricated
-          <span class="tag design">Not yet made</span>.</p>
       </div>
     </article>
 
@@ -132,7 +126,8 @@
         <h3>Organic transistors and OLEDs</h3>
         <ul>
           <li>Fabricated bottom-gate PDBT-co-TT organic thin-film transistors
-            with a PFBT self-assembled monolayer on the gold contacts, confirmed
+            (OTFTs) with a PFBT self-assembled monolayer on the gold contacts,
+            confirmed
             by goniometry (36.7&deg; to 64.3&deg; contact angle). Extracted
             threshold voltage and saturation mobility from transfer curves and
             measured 13% higher mobility, consistent with reduced interfacial
@@ -148,11 +143,11 @@
           <figure>
             <img width="1600" height="1200" decoding="async" loading="lazy" src="matsci164_otft.JPG"
                  alt="Organic thin-film transistor on a test board">
-            <figcaption>OTFT measurement.</figcaption>
+            <figcaption>OTFT devices.</figcaption>
           </figure>
           <figure>
             <img width="1200" height="1600" decoding="async" loading="lazy" src="matsci164_oled.JPG" alt="Course devices on a tray">
-            <figcaption>Devices from the course lab.</figcaption>
+            <figcaption>OLED devices from the class project.</figcaption>
           </figure>
         </div>
       </div>
@@ -169,12 +164,21 @@
         <span>Jun 2025 &ndash; Jun 2026</span>
       </div>
       <div>
-        <h3>Remote sensing of wetland change</h3>
-        <p>Geospatial analysis in Google Earth Engine, ArcGIS and R, with
-          fieldwork in Louisiana and sample processing back on campus. Wrote the
-          sample-prep SOP for cryomilling and digestion, and was second author
-          on an AGU abstract. My first research position, and where I learned to
-          handle data before I learned to make devices.</p>
+        <h3>Examining drought impacts on wetlands in Louisiana, Maryland and
+          Florida</h3>
+        <ul>
+          <li>Tracked wetland change across all three states by remote sensing,
+            with geospatial analysis in Google Earth Engine, ArcGIS and R.</li>
+          <li>Supported fieldwork in Louisiana.</li>
+          <li>Processed <strong>150+ samples</strong> back on campus by
+            cryomilling, acid digestion, CHN elemental analysis and ICP-OES to
+            get their C:N:P ratios.</li>
+          <li>Wrote the <strong>sample-prep SOP</strong> for cryomilling and
+            digestion.</li>
+          <li><strong>Second author</strong> on an AGU abstract.</li>
+        </ul>
+        <p>This was my first research position at Stanford, where I first got
+          hands-on lab and data analysis experience.</p>
       </div>
     </article>
 
